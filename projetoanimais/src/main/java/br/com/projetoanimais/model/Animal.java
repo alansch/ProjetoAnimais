@@ -3,20 +3,30 @@ package br.com.projetoanimais.model;
 public class Animal {
 
     private int id;
+    private int idTerreno;
     private String nome;
 
     public Animal(int id, String nome) {
         super();
         this.id = id;
+        this.idTerreno = idTerreno;
         this.nome = nome;
     }
 
-    public int getId() {
+    public int getId({
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getIdTerreno(){
+        return idTerreno;
+    }
+
+    public void setIdTerreno(int idTerreno){
+        this.idTerreno = idTerreno;
     }
 
     public String getNome() {
