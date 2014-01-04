@@ -9,21 +9,22 @@
     tools:context="br.com.projetoanimais.TelaInicio$PlaceholderFragment">
 
     <TextView
-        android:text="@string/hello_world"
+        android:text="@string/tela_inicio_pense_um_animal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:id="@+id/tela_inicio_texto"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gravar"
-        android:id="@+id/buttonGravar"
-        android:layout_marginTop="62dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="29dp"
-        android:onClick="gravarSql"/>
+        android:text="@string/botao_okey"
+        android:id="@+id/tela_inicio_button_ok"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

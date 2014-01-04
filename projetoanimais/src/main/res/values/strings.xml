@@ -5,4 +5,20 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <!-- labels -->
+    <string name="tela_inicio_pense_um_animal">PENSE EM UM ANIMAL</string>
+
+    <!-- buttons -->
+    <string name="botao_okey">OK</string>
+    <string name="botao_yes">SIM</string>
+    <string name="botao_no">NÃO</string>
+    <string name="iniciar_base">INICIAR BANCO</string>
+    <string name="limpar_base">LIMPAR BANCO</string>
+
+    <!-- quest -->
+    <string name="quest_terreno_agua">O animal que você pensou vive na água?</string>
+    <string name="quest_animal_pensado">O animal que você pensou foi </string>
+    <string name="quest_animal_inserir">Qual o animal que você pensou?</string>
+    <string name="title_activity_main">MainActivity</string>
+
 </resources>

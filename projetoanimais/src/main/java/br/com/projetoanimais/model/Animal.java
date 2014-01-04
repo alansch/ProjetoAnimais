@@ -6,14 +6,14 @@ public class Animal {
     private int idTerreno;
     private String nome;
 
-    public Animal(int id, String nome) {
+    public Animal(int id, String nome, int idTerreno) {
         super();
         this.id = id;
         this.idTerreno = idTerreno;
         this.nome = nome;
     }
 
-    public int getId({
+    public int getId(){
         return id;
     }
 
@@ -37,8 +37,13 @@ public class Animal {
         this.nome = nome;
     }
 
+
     @Override
     public String toString() {
-        return nome + " " ;
+        return "Animal{" +
+                "id=" + id +
+                ", idTerreno=" + idTerreno +
+                ", nome='" + nome + '\'' +
+                '}';
     }
-} 
+}

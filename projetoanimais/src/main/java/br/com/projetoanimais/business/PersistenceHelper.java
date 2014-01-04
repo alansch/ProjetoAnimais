@@ -1,8 +1,10 @@
-package br.com.projetoanimais.db;
+package br.com.projetoanimais.business;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import br.com.projetoanimais.db.AnimalDAO;
 
 public class PersistenceHelper extends SQLiteOpenHelper {
 
@@ -24,13 +26,16 @@ public class PersistenceHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(AnimalDAO.SCRIPT_CRIACAO_TABELA_ANIMAIS);
+        db.execSQL(AnimalDAO.SCRIPT_LIMPEZA_TABELA);
+        db.execSQL(AnimalDAO.SCRIPT_CRIACAO_TABELA);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(AnimalDAO.SCRIPT_DELECAO_TABELA);
+        db.execSQL(AnimalDAO.SCRIPT_LIMPEZA_TABELA);
         onCreate(db);
     }
+
+
 
 }

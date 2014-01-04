@@ -1,76 +1,63 @@
-package br.com.projetoanimais;
+package br.com.projetoanimais.ui;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.Button;
+import android.widget.Toast;
 
-public class TelaInicio extends ActionBarActivity {
+import br.com.projetoanimais.R;
+import br.com.projetoanimais.db.APPDAO;
+
+public class TelaInicio extends Activity {
+
+    Button bt_ok;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.a_tela_inicio);
+        setContentView(R.layout.f_tela_inicio);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
+        // encontra o botao ok
+        bt_ok = (Button) findViewById(R.id.tela_inicio_button_ok);
+
+        // define a acao do botao ok
+        bt_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // inicia a tela de perguntas
+                startActivity(new Intent(TelaInicio.this, TelaPerguntas.class));
+                // finaliza a tela de inicio
+                finish();
+            }
+        });
+
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.tela_inicio, menu);
         return true;
     }
 
-    public void gravarSql(View view){
-
-
-
-    }
-
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_gerar:
+                new APPDAO(TelaInicio.this);
+                return true;
+            case R.id.action_destruir:
+                Toast.makeText(TelaInicio.this, "Nao faco nada ainda", Toast.LENGTH_LONG).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.f_tela_inicio, container, false);
-            return rootView;
-        }
-
-
     }
 
 }

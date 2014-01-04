@@ -3,8 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="br.com.projetoanimais.TelaInicio" >
     
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
+    <item android:id="@+id/action_gerar"
+        android:title="@string/iniciar_base"
         app:showAsAction="never" />
+
+    <item android:id="@+id/action_destruir"
+        android:title="@string/limpar_base"
+        app:showAsAction="never" />
+        android:orderInCategory="100"
 </menu>
